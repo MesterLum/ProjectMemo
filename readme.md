@@ -11,6 +11,7 @@
 ###### Resources
 - [x] Upload Resources
 - [x] Get Resources LIST (id course)
+- [] Download resource
 
 ###### Tasks
 - [] Upload tasks
@@ -53,10 +54,17 @@ Responses:
 **200** - Created
 
 
-####### Get list resources from id course
+###### Get list resources from id course
 * **GET** /api/resources/**id**
 
 Responses:
 
 All data
+
+###### Download resource
+* **GET** /api/resources/download**?rout='rout'**
+
+
+
+
 

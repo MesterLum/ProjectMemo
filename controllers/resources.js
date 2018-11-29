@@ -22,7 +22,7 @@ export const UploadResource = (req, res) => {
             Number(idCurso),
             titulo,
             descripcion,
-            routImage,
+            nameImage,
             'A'
         ], (err) => {
             if (err) return res.status(500).send({ message: 'Internal error, error in get rows', err })
@@ -46,3 +46,14 @@ export const GetListResourcesForIdCourse = (req, res) => {
     })
 
 }
+
+export const DownloadResourceByNameResource = (req, res) => {
+    const rout = req.query.rout
+    if (!rout)
+        return res.status(400).send({ message: 'All params are required ?rout=blabla' })
+
+    res.download(__dirname + '/../media/resources/' + rout, err => {
+        if (err) return res.status(404).send({message: 'Not found file'})
+    })
+}
+
