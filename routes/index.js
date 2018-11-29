@@ -5,7 +5,7 @@ import Resources from './resources'
 
 const router = Router()
 
-router.use('resources/', Resources)
+router.use('/resources', Resources)
 
 
 export default router
