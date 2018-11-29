@@ -11,11 +11,12 @@
 ###### Resources
 - [x] Upload Resources
 - [x] Get Resources LIST (id course)
-- [] Download resource
+- [x] Download resource
 
 ###### Tasks
-- [] Upload tasks
-- [] Get task for a course
+- [x] Upload tasks
+- [x] Get task for a course
+- [x] Download tasks
 
 
 ###### News
@@ -51,7 +52,7 @@ Responses:
     }
 ```
 
-**200** - Created
+**201** - Created
 
 
 ###### Get list resources from id course
@@ -63,6 +64,51 @@ All data
 
 ###### Download resource
 * **GET** /api/resources/download**?rout='rout'**
+
+
+#### Tasks
+
+####### Upload tasks with params
+* **POST** /api/tasks/
+
+payload:
+
+```json
+    {
+        "idAlumno": Int,
+        "idCurso": Int,
+        "tipoElemento": Int,
+        "idElemento": Int,
+        "file": File
+
+    }
+```
+
+Responses:
+
+**400** - All params are requerid
+
+```json
+    {
+        "message": String
+    }
+```
+
+**500** - Internal error
+
+
+**201** - Created
+
+* **GET** /api/tasks/**id**
+
+Response:
+
+**200** - All data
+
+
+###### Download tasks
+* **GET** /api/tasks/download**?rout='rout'**
+
 
 
 

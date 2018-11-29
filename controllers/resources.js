@@ -5,7 +5,6 @@ import fs from 'fs'
 var pool = DB()
 
 export const UploadResource = (req, res) => {
-    
     const { idCurso, descripcion, titulo } = req.fields
     if (!idCurso || !descripcion || !titulo || !req.files.file)
         return res.status(400).send({ message: 'All params are required' })
@@ -27,7 +26,7 @@ export const UploadResource = (req, res) => {
         ], (err) => {
             if (err) return res.status(500).send({ message: 'Internal error, error in get rows', err })
 
-            return res.send({ message: 'Se inserto el registro' })
+            return res.status(201).send({ message: 'Se inserto el registro' })
         })
 
 
